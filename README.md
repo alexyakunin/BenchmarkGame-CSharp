@@ -1,3 +1,5 @@
 # BenchmarkGame-CSharp
 
-The Computer Language Benchmarks Game - my attempts to improve C# code there.
+My attempts to improve C# code for The Computer Language Benchmarks Game.
+
+See http://benchmarksgame.alioth.debian.org/
