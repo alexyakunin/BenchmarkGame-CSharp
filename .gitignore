@@ -1,0 +1,33 @@
+# Ignore IDE user settings
+.vs/
+.idea/
+
+# Ignore package folders
+packages
+node_modules
+
+# Ignore certain files
+*.orig
+Thumbs.db
+
+# Ignore specific temp. folders
+[Bb]in/
+obj/
+csx/
+[Tt]est[Rr]esult*
+
+# Ignore files built by Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.cache
+*.ilk
+*.log
+*.sbr

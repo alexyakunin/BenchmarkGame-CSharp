@@ -1,0 +1,42 @@
+Original code (OriginalProgram.cs):
+
+C:\Projects\BenchmarkGame-CSharp\src\binary-trees>Run.bat
+Microsoft (R) Build Engine version 15.1.1012.6693
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  binary-trees -> C:\Projects\BenchmarkGame-CSharp\src\binary-trees\bin\Release\netcoreapp1.1\binary-trees.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.85
+
+Execution time, ms:
+2551.3097
+2590.6444
+2588.7186
+2719.6087
+2507.545
+
+
+Updated code (Program.cs):
+
+C:\Projects\BenchmarkGame-CSharp\src\binary-trees>Run.bat
+Microsoft (R) Build Engine version 15.1.1012.6693
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  binary-trees -> C:\Projects\BenchmarkGame-CSharp\src\binary-trees\bin\Release\netcoreapp1.1\binary-trees.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.85
+
+Execution time, ms:
+2184.3485
+2139.1098
+2358.608
+2286.3317
+2418.717
