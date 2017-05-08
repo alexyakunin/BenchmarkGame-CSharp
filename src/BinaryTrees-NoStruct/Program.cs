@@ -72,8 +72,8 @@ public class TreeNode
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TreeNode CreateTree(int depth)
     {
-        return depth <= 0
-            ? default(TreeNode)
+        return depth < 0
+            ? null
             : new TreeNode(CreateTree(depth - 1), CreateTree(depth - 1));
     }
 
