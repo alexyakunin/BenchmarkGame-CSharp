@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-class BinaryTreesAlt
+public static class AltProgram
 {
     const int MinDepth = 4;
 
@@ -64,17 +64,10 @@ class BinaryTreesAlt
             });
         }
 
-        tcheck[0].Wait();
         Console.WriteLine("stretch tree of depth {0}\t check: {1}",
             stretchDepth, tcheck[0].Result);
-
-        for (int i = 0; i < results.Length; i++)
-        {
-            results[i].Wait();
-            Console.WriteLine(results[i].Result);
-        }
-
-        tcheck[1].Wait();
+        foreach (var t in results)
+            Console.WriteLine(t.Result);
         Console.WriteLine("long lived tree of depth {0}\t check: {1}",
             maxDepth, tcheck[1].Result);
     }

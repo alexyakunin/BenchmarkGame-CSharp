@@ -11,7 +11,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-public sealed class BinaryTrees
+public static class Program
 {
     public const int MinDepth = 4;
 
