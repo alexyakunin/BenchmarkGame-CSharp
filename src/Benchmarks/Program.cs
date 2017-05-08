@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes.Exporters;
 using BenchmarkDotNet.Attributes.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -17,7 +18,7 @@ namespace Benchmarks
             BenchmarkRunner.Run<TreeNodeBenchmark>();
         }
     }
-
+    [MarkdownExporter, AsciiDocExporter, HtmlExporter, RPlotExporter]
     public class TreeNodeBenchmark
     {
         public const int TreeDepth = 5;

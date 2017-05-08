@@ -9,9 +9,9 @@ dotnet cli version=1.0.3
 
 
 ```
- |                Method |     Mean |     Error |    StdDev |
- |---------------------- |---------:|----------:|----------:|
- |       CreateTreeNodes | 545.4 ns | 2.8630 ns | 2.6780 ns |
- | CreateTreeNodeStructs | 317.8 ns | 3.2890 ns | 3.0765 ns |
- |        CountTreeNodes | 100.3 ns | 0.3675 ns | 0.3437 ns |
- |  CountTreeNodeStructs | 101.1 ns | 0.9764 ns | 0.8655 ns |
+ |                Method |      Mean |     Error |    StdDev |
+ |---------------------- |----------:|----------:|----------:|
+ |       CreateTreeNodes | 578.64 ns | 5.4150 ns | 5.0652 ns |
+ | CreateTreeNodeStructs | 313.21 ns | 2.5041 ns | 2.2198 ns |
+ |        CountTreeNodes |  92.51 ns | 0.4994 ns | 0.4672 ns |
+ |  CountTreeNodeStructs | 100.75 ns | 0.3920 ns | 0.3667 ns |
