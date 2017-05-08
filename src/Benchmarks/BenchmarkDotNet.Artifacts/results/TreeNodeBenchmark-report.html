@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>TreeNodeBenchmark</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.5, OS=Windows 10.0.15063
+Processor=Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), ProcessorCount=8
+Frequency=2742186 Hz, Resolution=364.6726 ns, Timer=TSC
+dotnet cli version=1.0.3
+  [Host]     : .NET Core 4.6.25009.03, 64bit RyuJIT
+  DefaultJob : .NET Core 4.6.25009.03, 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>         Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
+</tr>
+</thead><tbody><tr><td>CreateTreeNodes</td><td>545.4 ns</td><td>2.8630 ns</td><td>2.6780 ns</td>
+</tr><tr><td>CreateTreeNodeStructs</td><td>317.8 ns</td><td>3.2890 ns</td><td>3.0765 ns</td>
+</tr><tr><td> CountTreeNodes</td><td>100.3 ns</td><td>0.3675 ns</td><td>0.3437 ns</td>
+</tr><tr><td>CountTreeNodeStructs</td><td>101.1 ns</td><td>0.9764 ns</td><td>0.8655 ns</td>
+</tr></tbody></table>
+</body>
+</html>
