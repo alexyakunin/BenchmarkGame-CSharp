@@ -9,6 +9,7 @@ node_modules
 # Ignore certain files
 *.orig
 Thumbs.db
+Output*.txt
 
 # Ignore specific temp. folders
 [Bb]in/
