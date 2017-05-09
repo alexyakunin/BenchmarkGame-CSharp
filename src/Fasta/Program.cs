@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 class Fasta
 {
@@ -105,35 +101,29 @@ class Fasta
         s.WriteByte((byte)'\n');
     }
 
-    static unsafe void MakeRepeatFastaBuffer(byte[] alu, int n, Stream s)
+    static void MakeRepeatFastaBuffer(byte[] alu, int n, Stream s)
     {
-        var buf = new byte[1025];
-        fixed (byte* pinnedAlu = &alu[0])
-        fixed (byte* pinnedBuf = &buf[0]) {
-            var pBuf = pinnedBuf;
-            var pBufEnd = pinnedBuf + buf.Length - 1;
-            var pAlu = pinnedAlu;
-            var pAluEnd = pinnedAlu + alu.Length;
-            for (; n > 0; n -= LineLength) {
-                var opSize = n < LineLength ? n : LineLength;
-                var pBufOpEnd = pBuf + opSize;
-                if (pBufOpEnd >= pBufEnd) {
-                    s.Write(buf, 0, (int) (pBuf - pinnedBuf));
-                    pBuf = pinnedBuf;
-                    pBufOpEnd = pBuf + opSize;
-                }
-
-                for (; pBuf < pBufOpEnd; pBuf++, pAlu++) {
-                    if (pAlu == pAluEnd)
-                        pAlu = pinnedAlu;
-                    *pBuf = *pAlu;
-                }
-
-                *(pBuf++) = (byte) '\n';
+        var aluIdx = 0;
+        var aluLength = alu.Length;
+        var buf = new byte[1024];
+        var bufIdx = 0;
+        for (; n > 0; n -= LineLength) {
+            var m = n < LineLength ? n : LineLength;
+            if (buf.Length - bufIdx < m) {
+                s.Write(buf, 0, bufIdx);
+                bufIdx = 0;
             }
-            if (pBuf != pinnedBuf)
-                s.Write(buf, 0, (int) (pBuf - pinnedBuf));
+            for (var i = 0; i < m; i++) {
+                if (aluIdx == aluLength)
+                    aluIdx = 0;
+                buf[bufIdx++] = alu[aluIdx];
+                aluIdx++;
+            }
+            buf[bufIdx++] = (byte)'\n';
         }
+
+        if (bufIdx != 0)
+            s.Write(buf, 0, bufIdx);
     }
 
 //    [MethodImpl(MethodImplOptions.AggressiveInlining)]
